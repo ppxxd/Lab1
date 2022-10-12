@@ -1,0 +1,20 @@
+[
+    {
+        "name": "You",
+        "release": "September 9, 2018",
+        "genre": "Psychological thriller",
+        "rating": 7.0,
+        "origin": "USA",
+        "numep": 30,
+        "numse": 3
+    },
+    {
+        "name": "Outer Banks",
+        "release": "April 15, 2020",
+        "genre": "Teen drama, Mystery, Thriller, Action-adventure",
+        "rating": 6.0,
+        "origin": "USA",
+        "numep": 20,
+        "numse": 2
+    }
+]
