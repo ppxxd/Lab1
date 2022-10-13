@@ -1,11 +1,11 @@
 # from movies import MovieManager
 # from tvseries import SeriesManager
-# #from iomanager import IOManager
+# from iomanager import IOManager
 # from rich import print
 # from user import User, UserManager
 from menu import menu
 
-menu()
+# menu()
 
 # xmltest = []
 # xmltest.append(MovieManager("Avatar", "December 18, 2009", "Science fiction", 8.0, "USA"))
@@ -28,6 +28,7 @@ menu()
 
 # dict1 = {'1234': [['Minions', 'Avatar', 'You'], {'You': 10.0}]}
 # a = User(dict1)
+# print(a.__dict__)
 # b = UserManager.addToJSON(a)
 # b = UserManager.removefromJSON("23")
 # dict2 = {'TEST': 7.0}

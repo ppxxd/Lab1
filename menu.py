@@ -36,6 +36,7 @@ def menu():
         except ValueError:
             print('You have to print a number!')
 
+    """1) Print all films"""
     if n == 1:
         films = IOManager.deserializeXML()
         k = 1
@@ -43,6 +44,7 @@ def menu():
             print(str(k) + ". " + element.name)
             k += 1
 
+    """2) Print all TV Series"""
     if n == 2:
         series = IOManager.deserializeJSON()
         k = 1
@@ -50,11 +52,13 @@ def menu():
             print(str(k) + ". " + element.name['name'])
             k += 1
 
+    """3) Read XML file"""
     if n == 3:
         films = IOManager.deserializeXML()
         for element in films:
             print(element.__dict__)
 
+    """4) Write a film to XML file"""
     if n == 4:
         func = ['name', 'release date', 'genre', 'rating', 'country of origin']
         variables = []
@@ -64,11 +68,13 @@ def menu():
         IOManager.serializeXML(movies)
         print('Done!')
 
+    """5) Read JSON file"""
     if n == 5:
         series = IOManager.deserializeJSON()
         for element in series:
             print(element.name)
 
+    """6) Write a series to JSON file"""
     if n == 6:
         func = ['name', 'release date', 'genre', 'rating',
                 'country of origin', 'number of episodes', 'number of seasons']
@@ -80,6 +86,7 @@ def menu():
         IOManager.serializeJSON(series)
         print('Done!')
 
+    """7) Find a film by name"""
     if n == 7:
         a = input(f"Print film's name: ")
         films = IOManager.deserializeXML()
@@ -89,6 +96,7 @@ def menu():
                 exit(0)
         print("Film not found.")
 
+    """8) Find a TV Series by name"""
     if n == 8:
         a = input(f"Print series's name: ")
         films = IOManager.deserializeJSON()
@@ -98,6 +106,7 @@ def menu():
                 exit(0)
         print("Series not found.")
 
+    """9) Show User menu"""
     if n == 9:
         print("Select what you want to do:\n 1) Print User's watched films and series\n "
               "2) Print User's rated films and series\n "
@@ -115,6 +124,7 @@ def menu():
             except ValueError:
                 print('You have to print a number!')
 
+        """1) Print User's watched films and series"""
         if n == 1:
             id = UserExistence()
             data = UserManager.readChosenJSON(id)[0]
@@ -123,6 +133,7 @@ def menu():
             else:
                 print("No watched films and series found.")
 
+        """2) Print User's rated films and series"""
         if n == 2:
             id = UserExistence()
             if len(UserManager.readChosenJSON(id)[1]) != 0:
@@ -130,6 +141,7 @@ def menu():
             else:
                 print("No rated films and series found.")
 
+        """3) Add new User"""
         if n == 3:
             func = ['id', 'watched', 'rated']
             variables = []
@@ -166,15 +178,17 @@ def menu():
             UserManager.addToJSON(User(dict1))
             print(f"Done! Added User with {variables[0]}'s ID")
 
+        """4) Remove User"""
         if n == 4:
             id = UserExistence()
             UserManager.removefromJSON(id)
             print(f"Done! Removed User with {id}'s ID")
 
+        """5) Add/Remove film or series to User"""
         if n == 5: # DONE
             id = UserExistence()
             action = input(f"What you want to do? Add/Remove\n")
-            watchrate = 1
+            watchrate = "w"
             if action == "Add":
                 added = input(f"Print watched films and series separated by space: ")
                 if len(added) == 0:
@@ -203,10 +217,11 @@ def menu():
                 print("Wrong action. Try again")
                 exit(0)
 
+        """6) Add/Remove rating to film or series to User"""
         if n == 6: # DONE
             id = UserExistence()
             action = input(f"What you want to do? Add/Remove\n")
-            watchrate = 2
+            watchrate = "r"
             if action == "Add":
                 added = {}
                 while True:

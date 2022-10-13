@@ -21,13 +21,6 @@ class User:
     def setID(self, id: str = ""):
         self.id = id
 
-    def getWatched(self):
-        watched = self.watched
-        return watched
-
-    def setWatched(self, watched: int = 0):
-        self.watched = watched
-
 
 class UserManager:
     @staticmethod
@@ -121,11 +114,11 @@ class UserManager:
         try:
             with open('users.json', 'r', encoding='utf-8') as read_file:
                 data = json.load(read_file)
-                if action == 1:  # watched
+                if action == "w":  # watched
                     idx = 0
                     for i in entry:
                         data[str(idname)][idx].append(i)
-                elif action == 2:  # rated
+                elif action == "r":  # rated
                     idx = 1
                     data[str(idname)][idx].update(entry)
             with open('users.json', "w") as file:
@@ -145,11 +138,11 @@ class UserManager:
             try:
                 with open('users.json', 'r', encoding='utf-8') as read_file:
                     data = json.load(read_file)
-                    if action == 1:  # watched
+                    if action == "w":  # watched
                         idx = 0
                         for i in entry:
                             data[str(idname)][idx].remove(i)
-                    elif action == 2:  # rated
+                    elif action == "r":  # rated
                         idx = 1
                         for k in entry:
                             data[str(idname)][idx].pop(k, None)
