@@ -5,7 +5,7 @@
 # from user import User, UserManager
 from menu import menu
 
-# menu()
+menu()
 
 # xmltest = []
 # xmltest.append(MovieManager("Avatar", "December 18, 2009", "Science fiction", 8.0, "USA"))

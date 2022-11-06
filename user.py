@@ -8,7 +8,7 @@ class User:
     def __del__(self):
         try:
             print()
-            # print(f"User {self.id} has been deleted.")
+            print(f"User {self.id} has been deleted.")
         except AttributeError:
             print("Incorrected object")
         except Exception:

@@ -13,8 +13,7 @@ class Series:
 class SeriesManager (Series):
     def __del__(self):
         try:
-            print()
-            # print(f"TV Series {self.name} has been deleted.")
+            print(f"TV Series {self.name} has been deleted.")
         except AttributeError:
             print("Uncorrected object")
         except Exception:

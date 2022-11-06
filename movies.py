@@ -10,8 +10,7 @@ class Movie:
 class MovieManager (Movie):
     def __del__(self):
         try:
-            print()
-            # print(f"Movie {self.name} has been deleted.")
+            print(f"Movie {self.name} has been deleted.")
         except AttributeError:
             print("Uncorrected object")
         except Exception:
